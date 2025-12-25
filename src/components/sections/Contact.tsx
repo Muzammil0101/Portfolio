@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
-import { BackgroundBeams } from "@/components/ui/BackgroundBeams";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { BackgroundBeams } from "@/components/ui/BackgroundBeams"; // Verified import
+import { Github, Linkedin, Mail, MessageCircle } from "lucide-react";
 
 export function Contact() {
     return (
@@ -37,8 +37,11 @@ export function Contact() {
                     <a href="https://linkedin.com" target="_blank" className="text-zinc-400 hover:text-white transition-colors">
                         <Linkedin className="h-6 w-6" />
                     </a>
-                    <a href="mailto:contact@example.com" className="text-zinc-400 hover:text-white transition-colors">
+                    <a href="mailto:muzammilhussainawan.00@gmail.com" className="text-zinc-400 hover:text-white transition-colors">
                         <Mail className="h-6 w-6" />
+                    </a>
+                    <a href="https://wa.me/923167787850" target="_blank" className="text-zinc-400 hover:text-white transition-colors">
+                        <MessageCircle className="h-6 w-6" />
                     </a>
                 </div>
             </div>

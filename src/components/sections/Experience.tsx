@@ -5,48 +5,36 @@ import { Timeline } from "@/components/ui/Timeline";
 export function Experience() {
     const data = [
         {
-            title: "2025",
+            title: "2024 - Present",
             content: (
                 <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Senior Full Stack Developer</h4>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Full Stack Developer (Lead Engineer)</h4>
                     <p className="text-zinc-400 text-sm md:text-base mb-4">
-                        Freelance & Contract
+                        SkinCare Xpert (Capstone Project)
                     </p>
                     <ul className="list-disc list-outside ml-5 text-zinc-300 space-y-2">
-                        <li>Architected scalable AI solutions using Next.js 15 and Vercel AI SDK.</li>
-                        <li>Reduced API latency by 30% for a major e-commerce client through edge caching.</li>
-                        <li>Implemented custom high-impact UI libraries for premium clients.</li>
+                        <li>Successfully architected and deployed an AI-powered dermatology application.</li>
+                        <li>Engineered robust RESTful APIs using Node.js and Express.js to handle asynchronous requests between React frontend and Python ML models.</li>
+                        <li>Designed efficient MongoDB schemas, optimizing query performance by 30% through proper indexing.</li>
+                        <li>Implemented JWT-based authentication and Bcrypt password hashing.</li>
+                        <li>Managed deployment pipeline on Vercel with 99.9% uptime.</li>
                     </ul>
                 </div>
             ),
         },
         {
-            title: "2024",
+            title: "Aug - Nov 2024",
             content: (
                 <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Full Stack Engineer</h4>
+                    <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Web Solutions Developer</h4>
                     <p className="text-zinc-400 text-sm md:text-base mb-4">
-                        Tech Solutions Inc.
+                        Dassi Wears
                     </p>
                     <ul className="list-disc list-outside ml-5 text-zinc-300 space-y-2">
-                        <li>Developed full-stack MERN applications for diverse industries.</li>
-                        <li>Integrated complex third-party APIs (Stripe, Twilio, OpenAI).</li>
-                        <li>Mentored junior developers in modern React patterns and TypeScript.</li>
-                    </ul>
-                </div>
-            ),
-        },
-        {
-            title: "2023",
-            content: (
-                <div>
-                    <h4 className="text-xl md:text-2xl font-bold text-white mb-2">Frontend Developer</h4>
-                    <p className="text-zinc-400 text-sm md:text-base mb-4">
-                        Creative Agency
-                    </p>
-                    <ul className="list-disc list-outside ml-5 text-zinc-300 space-y-2">
-                        <li>Built responsive, pixel-perfect websites from Figma designs.</li>
-                        <li>Optimized Core Web Vitals resulting in 20% SEO improvement.</li>
+                        <li>Spearheaded digital transformation by launching a fully functional e-commerce platform.</li>
+                        <li>Integrated secure Payment Gateways and inventory management logic.</li>
+                        <li>Optimized application for various devices, reducing bounce rate by 25%.</li>
+                        <li>Designed customer-centric workflows for product listing and checkout.</li>
                     </ul>
                 </div>
             ),

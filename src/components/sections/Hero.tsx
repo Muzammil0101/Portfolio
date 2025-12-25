@@ -6,43 +6,31 @@ import { TypewriterEffect } from "@/components/ui/TypewriterEffect";
 export function Hero() {
     const words = [
         {
-            text: "Full",
+            text: "Building",
             className: "text-zinc-500 dark:text-zinc-500",
-        },
-        {
-            text: "Stack",
-            className: "text-zinc-500 dark:text-zinc-500",
-        },
-        {
-            text: "Engineer",
-            className: "text-zinc-500 dark:text-zinc-500",
-        },
-        {
-            text: "|",
-            className: "text-indigo-500 dark:text-indigo-500",
-        },
-        {
-            text: "Architecting",
-            className: "text-emerald-500 dark:text-emerald-500",
         },
         {
             text: "Scalable",
-            className: "text-emerald-500 dark:text-emerald-500",
+            className: "text-zinc-500 dark:text-zinc-500",
+        },
+        {
+            text: "Web",
+            className: "text-zinc-500 dark:text-zinc-500",
+        },
+        {
+            text: "Apps",
+            className: "text-zinc-500 dark:text-zinc-500",
+        },
+        {
+            text: "with",
+            className: "text-zinc-500 dark:text-zinc-500",
         },
         {
             text: "AI",
             className: "text-emerald-500 dark:text-emerald-500",
         },
         {
-            text: "&",
-            className: "text-emerald-500 dark:text-emerald-500",
-        },
-        {
-            text: "Web",
-            className: "text-emerald-500 dark:text-emerald-500",
-        },
-        {
-            text: "Solutions.",
+            text: "Integration.",
             className: "text-emerald-500 dark:text-emerald-500",
         },
     ];
@@ -55,10 +43,10 @@ export function Hero() {
             />
             <div className=" p-4 max-w-7xl  mx-auto relative z-10  w-full pt-20 md:pt-0">
                 <h1 className="text-4xl md:text-7xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-50 to-neutral-400 bg-opacity-50">
-                    Muzammil
+                    Muzammil Hussain Awan
                 </h1>
                 <div className="mt-4 font-normal text-base text-zinc-300 max-w-lg text-center mx-auto">
-                    Transforming complex requirements into high-performance web applications using Next.js and Node.js.
+                    Results-oriented Full Stack Developer (MERN) | AI Integration Specialist based in Pakistan, ready for global challenges.
                 </div>
 
                 <div className="mt-8">
@@ -69,8 +57,8 @@ export function Hero() {
                     <a href="#projects" className="px-8 py-2 rounded-full bg-gradient-to-b from-indigo-500 to-indigo-600 text-white focus:ring-2 focus:ring-blue-400 hover:shadow-xl transition duration-200">
                         View Work
                     </a>
-                    <a href="#contact" className="px-8 py-2 rounded-full border border-zinc-700 bg-black text-white hover:bg-zinc-800 transition duration-200">
-                        Contact Me
+                    <a href="/resume.pdf" download className="px-8 py-2 rounded-full border border-zinc-700 bg-black text-white hover:bg-zinc-800 transition duration-200">
+                        Download Resume
                     </a>
                 </div>
             </div>

@@ -4,6 +4,7 @@ import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
 import { Experience } from "@/components/sections/Experience";
 import { Contact } from "@/components/sections/Contact";
+import { About } from "@/components/sections/About";
 
 export default function Home() {
   return (
@@ -11,6 +12,9 @@ export default function Home() {
       <Navbar />
       <section id="hero">
         <Hero />
+      </section>
+      <section id="about">
+        <About />
       </section>
       <section id="tech-stack" className="py-10">
         <TechStack />

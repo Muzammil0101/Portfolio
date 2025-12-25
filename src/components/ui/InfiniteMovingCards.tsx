@@ -14,6 +14,7 @@ export const InfiniteMovingCards = ({
         quote: string;
         name: string;
         title: string;
+        image?: string;
     }[];
     direction?: "left" | "right";
     speed?: "fast" | "normal" | "slow";
@@ -92,16 +93,25 @@ export const InfiniteMovingCards = ({
                             background:
                                 "linear-gradient(180deg, var(--zinc-800), var(--zinc-900)",
                         }}
-                        key={item.name}
+                        key={idx}
                     >
                         <blockquote>
                             <div
                                 aria-hidden="true"
                                 className="user-select-none -z-1 pointer-events-none absolute -left-0.5 -top-0.5 h-[calc(100%_+_4px)] w-[calc(100%_+_4px)]"
                             ></div>
-                            <span className=" relative z-20 text-sm leading-[1.6] text-zinc-100 font-normal">
-                                {item.quote}
-                            </span>
+                            <div className="relative z-20 mb-4">
+                                {item.image && (
+                                    <img
+                                        src={item.image}
+                                        alt={item.name}
+                                        className="h-10 w-10 object-contain mb-2"
+                                    />
+                                )}
+                                <span className="text-sm leading-[1.6] text-zinc-100 font-normal">
+                                    {item.quote}
+                                </span>
+                            </div>
                             <div className="relative z-20 mt-6 flex flex-row items-center">
                                 <span className="flex flex-col gap-1">
                                     <span className=" text-sm leading-[1.6] text-zinc-400 font-normal">

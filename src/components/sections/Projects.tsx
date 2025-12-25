@@ -30,25 +30,25 @@ const Skeleton = () => (
 const items = [
     {
         title: "SkinCare Xpert",
-        description: "AI-integrated skincare recommendations. Solved complex data parsing challenges.",
+        description: "AI-powered dermatology app using MERN stack and Python ML models for real-time skin analysis.",
         header: <Skeleton />,
         icon: <Code className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Dassi Wears",
-        description: "E-commerce platform with high-performance product filtering.",
+        description: "Fully functional e-commerce platform with secure payment gateways and inventory management.",
         header: <Skeleton />,
         icon: <Settings className="h-4 w-4 text-neutral-500" />,
     },
     {
-        title: "AI Automation Platform",
-        description: "Automating workflows with LLMs and Vercel AI SDK.",
+        title: "Professional Portfolio",
+        description: "High-performance SPA built with Next.js 15, Tailwind CSS, and Framer Motion.",
         header: <Skeleton />,
         icon: <FileText className="h-4 w-4 text-neutral-500" />,
     },
     {
-        title: "Portfolio V1",
-        description: "Previous iteration of personal branding site.",
+        title: "AI Integration",
+        description: "Specialized in integrating LLMs and ML models into scalable web architectures.",
         header: <Skeleton />,
         icon: <Link className="h-4 w-4 text-neutral-500" />,
     },

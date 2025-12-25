@@ -21,6 +21,9 @@ export const Navbar = () => {
                         <Link href="#contact" className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
                             Contact
                         </Link>
+                        <a href="/resume.pdf" download className="text-sm font-medium text-zinc-300 hover:text-white transition-colors">
+                            Resume
+                        </a>
                         <Link
                             href="#contact"
                             className="text-sm font-medium bg-zinc-800 text-white px-4 py-2 rounded-full hover:bg-zinc-700 transition-colors border border-zinc-700"
