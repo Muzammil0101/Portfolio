@@ -14,18 +14,45 @@ export function Contact() {
                     Ready to build something amazing? Whether you have a question or just want to say hi, I'll try my best to get back to you!
                 </p>
 
-                <form className="mt-8 space-y-4 relative z-10">
+                <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    const form = e.currentTarget;
+                    const email = (form.elements.namedItem('email') as HTMLInputElement).value;
+                    const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+
+                    try {
+                        const res = await fetch('/api/contact', {
+                            method: 'POST',
+                            headers: { 'Content-Type': 'application/json' },
+                            body: JSON.stringify({ email, message }),
+                        });
+
+                        if (res.ok) {
+                            alert('Message sent successfully!');
+                            form.reset();
+                        } else {
+                            alert('Failed to send message.');
+                        }
+                    } catch (error) {
+                        console.error(error);
+                        alert('Something went wrong.');
+                    }
+                }} className="mt-8 space-y-4 relative z-10">
                     <input
-                        type="text"
+                        name="email"
+                        type="email"
                         placeholder="Your email"
+                        required
                         className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700 text-neutral-200 px-4 py-3 focus:outline-none transition duration-300"
                     />
                     <textarea
+                        name="message"
                         placeholder="Your message"
                         rows={4}
+                        required
                         className="rounded-lg border border-neutral-800 focus:ring-2 focus:ring-teal-500  w-full relative z-10 mt-4  bg-neutral-950 placeholder:text-neutral-700 text-neutral-200 px-4 py-3 focus:outline-none transition duration-300"
                     ></textarea>
-                    <button className="w-full rounded-lg bg-gradient-to-r from-indigo-500 to-emerald-500 px-4 py-3 font-bold text-white transition duration-200 hover:opacity-90">
+                    <button type="submit" className="w-full rounded-lg bg-gradient-to-r from-indigo-500 to-emerald-500 px-4 py-3 font-bold text-white transition duration-200 hover:opacity-90">
                         Send Message
                     </button>
                 </form>

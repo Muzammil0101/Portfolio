@@ -31,25 +31,25 @@ const items = [
     {
         title: "SkinCare Xpert",
         description: "AI-powered dermatology app using MERN stack and Python ML models for real-time skin analysis.",
-        header: <Skeleton />,
+        header: <img src="/projects/skincare.png" alt="SkinCare Xpert" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
         icon: <Code className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Dassi Wears",
         description: "Fully functional e-commerce platform with secure payment gateways and inventory management.",
-        header: <Skeleton />,
+        header: <img src="/projects/dassi.png" alt="Dassi Wears" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
         icon: <Settings className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "Professional Portfolio",
         description: "High-performance SPA built with Next.js 15, Tailwind CSS, and Framer Motion.",
-        header: <Skeleton />,
+        header: <img src="/projects/portfolio.png" alt="Portfolio" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
         icon: <FileText className="h-4 w-4 text-neutral-500" />,
     },
     {
         title: "AI Integration",
         description: "Specialized in integrating LLMs and ML models into scalable web architectures.",
-        header: <Skeleton />,
+        header: <img src="/projects/ai.png" alt="AI Integration" className="flex flex-1 w-full h-full min-h-[6rem] rounded-xl object-cover" />,
         icon: <Link className="h-4 w-4 text-neutral-500" />,
     },
 ];

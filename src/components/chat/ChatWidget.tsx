@@ -3,18 +3,61 @@ import React, { useState, useRef, useEffect } from "react";
 import { useChat } from "ai/react";
 import { MessageCircle, X, Send, User, Bot, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 export const ChatWidget = () => {
+    const pathname = usePathname();
     const [isOpen, setIsOpen] = useState(false);
-    const { messages, input, handleInputChange, handleSubmit, isLoading } = useChat({
+
+    // Hide widget on admin pages
+    if (pathname?.startsWith("/admin")) return null;
+
+    const [sessionId, setSessionId] = useState("");
+
+    useEffect(() => {
+        let id = localStorage.getItem("chat_session_id");
+        if (!id) {
+            id = Math.random().toString(36).substring(2, 15);
+            localStorage.setItem("chat_session_id", id);
+        }
+        setSessionId(id);
+    }, []);
+
+    const { messages, input, handleInputChange, handleSubmit, isLoading, setMessages } = useChat({
         api: "/api/chat",
+        body: { sessionId },
+        initialMessages: [],
     });
     const messagesEndRef = useRef<HTMLDivElement>(null);
+
+    // Load messages from local storage on mount
+    useEffect(() => {
+        const savedMessages = localStorage.getItem("chat_messages");
+        if (savedMessages) {
+            try {
+                setMessages(JSON.parse(savedMessages));
+            } catch (e) {
+                console.error("Failed to parse chat messages", e);
+            }
+        }
+    }, [setMessages]);
+
+    // Save messages to local storage whenever they change
+    useEffect(() => {
+        if (messages.length > 0) {
+            localStorage.setItem("chat_messages", JSON.stringify(messages));
+        }
+    }, [messages]);
 
     const toggleChat = () => setIsOpen(!isOpen);
 
     const scrollToBottom = () => {
         messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+    };
+
+    const clearChat = () => {
+        setMessages([]);
+        localStorage.removeItem("chat_messages");
     };
 
     useEffect(() => {
@@ -32,12 +75,21 @@ export const ChatWidget = () => {
                             <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
                             <h3 className="font-semibold text-white">AI Assistant</h3>
                         </div>
-                        <button
-                            onClick={toggleChat}
-                            className="text-zinc-400 hover:text-white transition-colors"
-                        >
-                            <X className="w-5 h-5" />
-                        </button>
+                        <div className="flex items-center gap-1">
+                            <button
+                                onClick={clearChat}
+                                className="text-zinc-400 hover:text-red-400 transition-colors mr-2"
+                                title="Clear Chat"
+                            >
+                                <span className="text-xs">Clear</span>
+                            </button>
+                            <button
+                                onClick={toggleChat}
+                                className="text-zinc-400 hover:text-white transition-colors"
+                            >
+                                <X className="w-5 h-5" />
+                            </button>
+                        </div>
                     </div>
 
                     {/* Messages */}
