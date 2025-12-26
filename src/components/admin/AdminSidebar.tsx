@@ -75,15 +75,30 @@ export function AdminSidebar() {
                     </Link>
                 ))}
 
-                {/* Placeholders for future expansion visual only if we are keeping single page app structure for now */}
-                <button disabled className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-zinc-600 cursor-not-allowed">
+                <Link
+                    href="/admin?tab=contacts"
+                    className={cn(
+                        "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                        pathname === "/admin" && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('tab') === 'contacts'
+                            ? "bg-indigo-600/10 text-indigo-400 border border-indigo-600/20"
+                            : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                    )}
+                >
                     <MessageSquare className="w-5 h-5" />
                     Messages
-                </button>
-                <button disabled className="w-full flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-zinc-600 cursor-not-allowed">
+                </Link>
+                <Link
+                    href="/admin?tab=chats"
+                    className={cn(
+                        "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
+                        pathname === "/admin" && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('tab') === 'chats'
+                            ? "bg-indigo-600/10 text-indigo-400 border border-indigo-600/20"
+                            : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                    )}
+                >
                     <MessageCircle className="w-5 h-5" />
                     AI Chats
-                </button>
+                </Link>
             </nav>
 
             {/* Footer */}
