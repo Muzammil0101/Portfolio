@@ -1,5 +1,6 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
+import { useSearchParams } from "next/navigation";
 import { format } from "date-fns";
 import {
     Users,
@@ -27,10 +28,26 @@ type Chat = {
 };
 
 export default function AdminPage() {
+    return (
+        <Suspense fallback={<div className="text-white p-8">Loading...</div>}>
+            <AdminContent />
+        </Suspense>
+    );
+}
+
+function AdminContent() {
     const [data, setData] = useState<{ chats: Chat[]; contacts: Contact[] } | null>(null);
     const [loading, setLoading] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
     const [activeTab, setActiveTab] = useState<"contacts" | "chats">("contacts");
+    const searchParams = useSearchParams();
+
+    useEffect(() => {
+        const tab = searchParams.get("tab");
+        if (tab === "contacts" || tab === "chats") {
+            setActiveTab(tab);
+        }
+    }, [searchParams]);
 
     const fetchData = () => {
         setLoading(true);
