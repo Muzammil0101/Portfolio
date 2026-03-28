@@ -29,7 +29,7 @@ type Chat = {
 
 export default function AdminPage() {
     return (
-        <Suspense fallback={<div className="text-white p-8">Loading...</div>}>
+        <Suspense fallback={<div className="text-zinc-900 p-8">Loading...</div>}>
             <AdminContent />
         </Suspense>
     );
@@ -105,69 +105,69 @@ function AdminContent() {
         <div className="space-y-8">
             {/* Header */}
             <div>
-                <h1 className="text-3xl font-bold text-white mb-2">Dashboard Overview</h1>
-                <p className="text-zinc-400">Welcome back, Muzammil. Here's what's happening today.</p>
+                <h1 className="text-3xl font-bold text-zinc-900 mb-2">Dashboard Overview</h1>
+                <p className="text-zinc-600">Welcome back, Muzammil. Here&apos;s what&apos;s happening today.</p>
             </div>
 
             {/* Stats Cards */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex items-center justify-between">
+                <div className="bg-white border border-zinc-200 shadow-sm p-6 rounded-xl flex items-center justify-between">
                     <div>
                         <p className="text-zinc-500 text-sm font-medium">Total Messages</p>
-                        <h3 className="text-3xl font-bold text-white mt-1">{data.contacts.length}</h3>
+                        <h3 className="text-3xl font-bold text-zinc-900 mt-1">{data.contacts.length}</h3>
                     </div>
-                    <div className="w-12 h-12 bg-emerald-500/10 rounded-full flex items-center justify-center">
-                        <MessageSquare className="w-6 h-6 text-emerald-500" />
+                    <div className="w-12 h-12 bg-emerald-100 rounded-full flex items-center justify-center">
+                        <MessageSquare className="w-6 h-6 text-emerald-600" />
                     </div>
                 </div>
-                <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex items-center justify-between">
+                <div className="bg-white border border-zinc-200 shadow-sm p-6 rounded-xl flex items-center justify-between">
                     <div>
                         <p className="text-zinc-500 text-sm font-medium">AI Conversations</p>
-                        <h3 className="text-3xl font-bold text-white mt-1">{data.chats.length}</h3>
+                        <h3 className="text-3xl font-bold text-zinc-900 mt-1">{data.chats.length}</h3>
                     </div>
-                    <div className="w-12 h-12 bg-indigo-500/10 rounded-full flex items-center justify-center">
-                        <Users className="w-6 h-6 text-indigo-500" />
+                    <div className="w-12 h-12 bg-indigo-100 rounded-full flex items-center justify-center">
+                        <Users className="w-6 h-6 text-indigo-600" />
                     </div>
                 </div>
                 {/* Placeholder for future stat */}
-                <div className="bg-zinc-900 border border-zinc-800 p-6 rounded-xl flex items-center justify-between">
+                <div className="bg-white border border-zinc-200 shadow-sm p-6 rounded-xl flex items-center justify-between">
                     <div>
                         <p className="text-zinc-500 text-sm font-medium">Total Interactions</p>
-                        <h3 className="text-3xl font-bold text-white mt-1">{data.contacts.length + data.chats.length}</h3>
+                        <h3 className="text-3xl font-bold text-zinc-900 mt-1">{data.contacts.length + data.chats.length}</h3>
                     </div>
-                    <div className="w-12 h-12 bg-purple-500/10 rounded-full flex items-center justify-center">
-                        <RefreshCcw className="w-6 h-6 text-purple-500" />
+                    <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center">
+                        <RefreshCcw className="w-6 h-6 text-purple-600" />
                     </div>
                 </div>
             </div>
 
             {/* Content Area */}
-            <div className="bg-zinc-900 border border-zinc-800 rounded-xl overflow-hidden min-h-[500px]">
+            <div className="bg-white border border-zinc-200 shadow-sm rounded-xl overflow-hidden min-h-[500px]">
                 {/* Toolbar */}
-                <div className="p-4 border-b border-zinc-800 flex flex-col md:flex-row gap-4 justify-between items-center bg-zinc-900/50">
-                    <div className="flex bg-zinc-950 rounded-lg p-1 border border-zinc-800">
+                <div className="p-4 border-b border-zinc-200 flex flex-col md:flex-row gap-4 justify-between items-center bg-zinc-50">
+                    <div className="flex bg-zinc-100 rounded-lg p-1 border border-zinc-200">
                         <button
                             onClick={() => setActiveTab("contacts")}
-                            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${activeTab === 'contacts' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-400 hover:text-white'}`}
+                            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${activeTab === 'contacts' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200'}`}
                         >
                             Messages
                         </button>
                         <button
                             onClick={() => setActiveTab("chats")}
-                            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${activeTab === 'chats' ? 'bg-zinc-800 text-white shadow-sm' : 'text-zinc-400 hover:text-white'}`}
+                            className={`px-4 py-1.5 rounded-md text-sm font-medium transition-all ${activeTab === 'chats' ? 'bg-white text-zinc-900 shadow-sm' : 'text-zinc-500 hover:text-zinc-900 hover:bg-zinc-200'}`}
                         >
                             AI Chats
                         </button>
                     </div>
 
                     <div className="relative w-full md:w-64">
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-500" />
+                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
                         <input
                             type="text"
                             placeholder="Search..."
                             value={searchQuery}
                             onChange={(e) => setSearchQuery(e.target.value)}
-                            className="w-full bg-zinc-950 border border-zinc-800 rounded-lg pl-9 pr-4 py-2 text-sm text-white focus:outline-none focus:border-indigo-500/50 transition-colors"
+                            className="w-full bg-white border border-zinc-300 rounded-lg pl-9 pr-4 py-2 text-sm text-zinc-900 focus:outline-none focus:border-indigo-500 focus:ring-1 focus:ring-indigo-500 transition-colors placeholder:text-zinc-400"
                         />
                     </div>
                 </div>
@@ -177,7 +177,7 @@ function AdminContent() {
                     {activeTab === "contacts" ? (
                         <div className="overflow-x-auto">
                             <table className="w-full text-left border-collapse">
-                                <thead className="bg-zinc-950/50 text-zinc-500 text-xs uppercase font-medium">
+                                <thead className="bg-zinc-50 text-zinc-500 text-xs uppercase font-medium border-b border-zinc-200">
                                     <tr>
                                         <th className="px-6 py-3">Date</th>
                                         <th className="px-6 py-3">Email</th>
@@ -185,22 +185,22 @@ function AdminContent() {
                                         <th className="px-6 py-3 text-right">Actions</th>
                                     </tr>
                                 </thead>
-                                <tbody className="divide-y divide-zinc-800/50">
+                                <tbody className="divide-y divide-zinc-200">
                                     {filteredContacts.map((c) => (
-                                        <tr key={c._id} className="hover:bg-zinc-800/20 transition-colors group">
-                                            <td className="px-6 py-4 text-sm text-zinc-500 whitespace-nowrap">
+                                        <tr key={c._id} className="hover:bg-zinc-50 transition-colors group">
+                                            <td className="px-6 py-4 text-sm text-zinc-600 whitespace-nowrap">
                                                 {format(new Date(c.createdAt), "MMM d, yyyy h:mm a")}
                                             </td>
-                                            <td className="px-6 py-4 text-sm font-medium text-emerald-400">
+                                            <td className="px-6 py-4 text-sm font-medium text-emerald-600">
                                                 {c.email}
                                             </td>
-                                            <td className="px-6 py-4 text-sm text-zinc-300 max-w-sm truncate">
+                                            <td className="px-6 py-4 text-sm text-zinc-800 max-w-sm truncate">
                                                 {c.message}
                                             </td>
                                             <td className="px-6 py-4 text-right">
                                                 <button
                                                     onClick={() => handleDelete(c._id, "contact")}
-                                                    className="p-2 text-zinc-600 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+                                                    className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
                                                     title="Delete Message"
                                                 >
                                                     <Trash2 className="w-4 h-4" />
@@ -219,21 +219,21 @@ function AdminContent() {
                             </table>
                         </div>
                     ) : (
-                        <div className="divide-y divide-zinc-800/50">
+                        <div className="divide-y divide-zinc-200">
                             {filteredChats.map((chat) => (
-                                <details key={chat._id} className="group open:bg-zinc-900/30 transition-colors">
-                                    <summary className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-zinc-900/50">
+                                <details key={chat._id} className="group open:bg-zinc-50 transition-colors">
+                                    <summary className="flex justify-between items-center px-6 py-4 cursor-pointer hover:bg-zinc-50">
                                         <div className="flex gap-6 items-center flex-1">
                                             <div className="flex flex-col">
-                                                <span className="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2 py-0.5 rounded border border-indigo-500/20 w-fit">
+                                                <span className="text-xs font-mono text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded border border-indigo-100 w-fit">
                                                     {chat.sessionId.substring(0, 8)}
                                                 </span>
                                                 <span className="text-xs text-zinc-500 mt-1">
                                                     {format(new Date(chat.updatedAt), "MMM d, yyyy h:mm a")}
                                                 </span>
                                             </div>
-                                            <div className="text-sm text-zinc-400">
-                                                <span className="text-zinc-200 font-medium">{chat.messages.length}</span> messages interaction
+                                            <div className="text-sm text-zinc-500">
+                                                <span className="text-zinc-900 font-medium">{chat.messages.length}</span> messages interaction
                                             </div>
                                         </div>
                                         <div className="flex items-center gap-4">
@@ -242,16 +242,16 @@ function AdminContent() {
                                                     e.preventDefault();
                                                     handleDelete(chat._id, "chat");
                                                 }}
-                                                className="p-2 text-zinc-600 hover:text-red-400 hover:bg-red-400/10 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
+                                                className="p-2 text-zinc-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors opacity-0 group-hover:opacity-100"
                                                 title="Delete Chat Log"
                                             >
                                                 <Trash2 className="w-4 h-4" />
                                             </button>
-                                            <ChevronDown className="w-4 h-4 text-zinc-600 group-open:rotate-180 transition-transform" />
+                                            <ChevronDown className="w-4 h-4 text-zinc-400 group-open:rotate-180 transition-transform" />
                                         </div>
                                     </summary>
                                     <div className="px-6 pb-6 pt-2 pl-14 space-y-3">
-                                        <div className="space-y-3 bg-zinc-950/50 rounded-xl p-4 border border-zinc-800/50">
+                                        <div className="space-y-3 bg-white rounded-xl p-4 border border-zinc-200">
                                             {chat.messages.map((m: any, i: number) => (
                                                 <div
                                                     key={i}
@@ -260,7 +260,7 @@ function AdminContent() {
                                                     <div
                                                         className={`p-3 rounded-2xl max-w-[85%] ${m.role === "user"
                                                             ? "bg-indigo-600 text-white rounded-br-none"
-                                                            : "bg-zinc-800 text-zinc-300 rounded-bl-none"
+                                                            : "bg-zinc-100 text-zinc-800 rounded-bl-none"
                                                             }`}
                                                     >
                                                         <p className="whitespace-pre-wrap">{m.content}</p>

@@ -31,30 +31,18 @@ export function AdminSidebar() {
             href: "/admin",
             icon: LayoutDashboard,
         },
-        // In the future we can split these into separate pages, 
-        // for now they all live on /admin but we could easily route them
-        // {
-        //     label: "Messages",
-        //     href: "/admin/messages",
-        //     icon: MessageSquare,
-        // },
-        // {
-        //     label: "AI Chats",
-        //     href: "/admin/chats",
-        //     icon: MessageCircle,
-        // },
     ];
 
     if (pathname === "/admin/login") return null;
 
     return (
-        <aside className="fixed left-0 top-0 h-screen w-64 bg-zinc-950 border-r border-zinc-900 flex flex-col z-40">
+        <aside className="fixed left-0 top-0 h-screen w-64 bg-white border-r border-zinc-200 flex flex-col z-40">
             {/* Header */}
-            <div className="p-6 border-b border-zinc-900 flex items-center gap-3">
+            <div className="p-6 border-b border-zinc-200 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-indigo-500 to-emerald-500 flex items-center justify-center">
                     <Shield className="w-5 h-5 text-white" />
                 </div>
-                <h2 className="font-bold text-lg text-white">Admin Panel</h2>
+                <h2 className="font-bold text-lg text-zinc-900">Admin Panel</h2>
             </div>
 
             {/* Nav */}
@@ -66,8 +54,8 @@ export function AdminSidebar() {
                         className={cn(
                             "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                             pathname === item.href
-                                ? "bg-indigo-600/10 text-indigo-400 border border-indigo-600/20"
-                                : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                                ? "bg-indigo-50 text-indigo-600 border border-indigo-100"
+                                : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"
                         )}
                     >
                         <item.icon className="w-5 h-5" />
@@ -80,8 +68,8 @@ export function AdminSidebar() {
                     className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                         pathname === "/admin" && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('tab') === 'contacts'
-                            ? "bg-indigo-600/10 text-indigo-400 border border-indigo-600/20"
-                            : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                            ? "bg-indigo-50 text-indigo-600 border border-indigo-100"
+                            : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"
                     )}
                 >
                     <MessageSquare className="w-5 h-5" />
@@ -92,8 +80,8 @@ export function AdminSidebar() {
                     className={cn(
                         "flex items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium transition-colors",
                         pathname === "/admin" && typeof window !== 'undefined' && new URLSearchParams(window.location.search).get('tab') === 'chats'
-                            ? "bg-indigo-600/10 text-indigo-400 border border-indigo-600/20"
-                            : "text-zinc-400 hover:text-white hover:bg-zinc-900"
+                            ? "bg-indigo-50 text-indigo-600 border border-indigo-100"
+                            : "text-zinc-600 hover:text-zinc-900 hover:bg-zinc-50"
                     )}
                 >
                     <MessageCircle className="w-5 h-5" />
@@ -102,10 +90,10 @@ export function AdminSidebar() {
             </nav>
 
             {/* Footer */}
-            <div className="p-4 border-t border-zinc-900">
+            <div className="p-4 border-t border-zinc-200">
                 <button
                     onClick={handleLogout}
-                    className="flex w-full items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-zinc-400 hover:text-red-400 hover:bg-red-900/10 transition-colors"
+                    className="flex w-full items-center gap-3 px-4 py-3 rounded-lg text-sm font-medium text-zinc-600 hover:text-red-600 hover:bg-red-50 transition-colors"
                 >
                     <LogOut className="w-5 h-5" />
                     Logout

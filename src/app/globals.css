@@ -4,6 +4,12 @@
   --color-zinc-950: #09090b;
   --color-indigo-500: #6366f1;
   --color-emerald-500: #10b981;
+  --color-primary-500: #3b82f6; /* Blue */
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-accent-500: #8b5cf6; /* Purple */
+  --color-accent-600: #7c3aed;
+  --color-accent-700: #6d28d9;
 
   --animate-spotlight: spotlight 2s ease .75s 1 forwards;
   --animate-scroll: scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite;
@@ -32,8 +38,9 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    /* Forcing light theme */
+    --background: #ffffff;
+    --foreground: #171717;
   }
 }
 
@@ -54,4 +61,20 @@ body {
   backdrop-filter: blur(10px);
   background: rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+@utility glass-light {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+@utility bg-grid-zinc {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32' width='32' height='32' fill='none' stroke='%2300000010'%3e%3cpath d='M0 .5H31.5V32'/%3e%3c/svg%3e");
+}
+
+@utility text-gradient {
+  background-image: linear-gradient(to right, var(--color-primary-500), var(--color-accent-500));
+  -webkit-background-clip: text;
+  color: transparent;
 }

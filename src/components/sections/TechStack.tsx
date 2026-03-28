@@ -4,8 +4,10 @@ import { InfiniteMovingCards } from "../ui/InfiniteMovingCards";
 
 export function TechStack() {
     return (
-        <div className="h-[20rem] rounded-md flex flex-col antialiased bg-zinc-950 dark:bg-grid-white/[0.05] items-center justify-center relative overflow-hidden">
-            <h2 className="text-3xl font-bold text-center mb-8 z-10">The Toolbox</h2>
+        <div className="h-[20rem] rounded-md flex flex-col antialiased bg-transparent items-center justify-center relative overflow-hidden">
+            <h2 className="text-2xl md:text-4xl font-bold tracking-tight text-center mb-8 z-10 text-zinc-900 border border-zinc-200 bg-white px-6 py-2 rounded-full shadow-sm">
+                Technologies & Tools
+            </h2>
             <InfiniteMovingCards
                 items={techStackItems}
                 direction="right"

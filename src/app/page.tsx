@@ -1,31 +1,29 @@
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/sections/Hero";
+import { Services } from "@/components/sections/Services";
+import { Process } from "@/components/sections/Process";
 import { TechStack } from "@/components/sections/TechStack";
 import { Projects } from "@/components/sections/Projects";
-import { Experience } from "@/components/sections/Experience";
+import { Testimonials } from "@/components/sections/Testimonials";
 import { Contact } from "@/components/sections/Contact";
-import { About } from "@/components/sections/About";
+import { AnimatedBackground } from "@/components/ui/AnimatedBackground";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-zinc-950 text-white overflow-hidden font-sans">
+    <main className="min-h-screen text-zinc-900 font-sans selection:bg-primary-500/30 selection:text-zinc-900 relative">
+      <AnimatedBackground />
       <Navbar />
       <section id="hero">
         <Hero />
       </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="tech-stack" className="py-10">
+      <Services />
+      <Process />
+      <Projects />
+      <section id="tech-stack" className="py-10 bg-transparent border-t border-zinc-200/50">
         <TechStack />
       </section>
-      <section id="projects">
-        <Projects />
-      </section>
-      <section id="experience">
-        <Experience />
-      </section>
-      <section id="contact">
+      <Testimonials />
+      <section id="contact" className="border-t border-zinc-200/50">
         <Contact />
       </section>
     </main>
